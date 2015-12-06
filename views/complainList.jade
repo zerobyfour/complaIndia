@@ -1,0 +1,23 @@
+div.complain-list.col-sm-10
+ ul.list-group
+  li.list-group-item.comp-container(ng-repeat='complain in complains') 
+   div.row
+    div.col-sm-8 {{complain.text}}
+    div.col-sm-4(ng-repeat='im in complain.images')
+     img.img-thumbnail(ng-src="{{loadedImage[im]}}", width='304', height='236')
+   div.col-sm-9
+   div.row.entity_details
+    div.col-sm-5.text-danger.place_url(ng-click="openWindow(complain.placeInfo.url)")
+     span.glyphicon.glyphicon-map-marker.cust_im
+     span {{complain.location}}
+    div.col-sm-3.text-info
+     span.glyphicon.glyphicon-user.cust_im
+     span {{complain.complainant}}
+    div.col-sm-4.text-info
+     span.glyphicon.glyphicon-time.cust_im
+     span {{parseToLocalDate(complain.date)}}
+    div.col-sm-10
+div.page-list.col-sm-10
+ ul.pagination
+  li(ng-repeat="i in getNumber(pageCount) track by $index" ng-class="{active : $index + 1 == pageIndex}")
+   a(href="javascript:;", ng-click='loadPage($index + 1)') {{$index + 1}}

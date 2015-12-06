@@ -1,0 +1,38 @@
+div.col-sm-10.form-group(ng-show='addFlag')
+ h3 Add new complain
+ form(name="addCompForm", novalidate)
+  div.col-sm-2
+   span.label.label-default Description
+  div.col-sm-9
+   textarea.form-control(cols=50, rows=5, ng-model='desc', name='desc', required)
+   span(ng-show="addCompForm.desc.$dirty && addCompForm.desc.$invalid")
+    span(ng-show="addCompForm.desc.$invalid") Please provide a valid description
+  div.col-sm-2
+   span.label.label-default Image
+  div.col-sm-9
+   input.btn.btn-default(type='file', ng-model='image', file-model='image', name='image', onchange="angular.element(this).scope().uploadImage(this)")
+   span(ng-show="addReqForm.image.$dirty && addReqForm.image.$invalid")
+    span(ng-show="addReqForm.image.$invalid") Please provide a valid image
+   div.row
+    img.img-thumbnail(ng-repeat='im in images', ng-src="{{loadedImage[im]}}", width='304', height='236') 
+  div.col-sm-2
+   span.label.label-default Name
+  div.col-sm-9
+   input.form-control(type='text', size=50, ng-model='name', name='name', required)
+   span(ng-show="addCompForm.name.$dirty && addCompForm.name.$invalid")
+    span(ng-show="addCompForm.name.$invalid") Name is required
+  div.col-sm-2
+   span.label.label-default Email
+  div.col-sm-9
+   input.form-control(type='email', size=50, ng-model='email', name='email', required)
+   span(ng-show="addCompForm.email.$dirty && addCompForm.email.$invalid")
+    span.text-error(ng-show="addCompForm.email.$invalid") Please provide valid email
+  div.col-sm-2
+   span.label.label-default Place
+  div.col-sm-9
+   input.control.form-control#search-map-auto-com.map-places(type='text', size=50, ng-model='place', name='place', required)
+   span(ng-show="addCompForm.place.$dirty && addCompForm.place.$invalid")
+    span.text-error(ng-show="addCompForm.place.$invalid") Location is required
+  div.col-sm-2
+  div.col-sm-5.btn-box
+   input.form-control.btn.btn-primary(type='button', value="submit", ng-click='submitComplain()' ng-disabled="addCompForm.desc.$dirty && addCompForm.desc.$invalid || addCompForm.name.$dirty && addCompForm.name.$invalid || addCompForm.email.$dirty && addCompForm.email.$invalid || addCompForm.place.$dirty && addCompForm.place.$invalid || addCompForm.place.$pristine || addCompForm.email.$pristine || addCompForm.name.$pristine || addCompForm.desc.$pristine")

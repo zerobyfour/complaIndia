@@ -1,0 +1,34 @@
+doctype html
+html(ng-app='compApp')
+  head
+    title= title
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(charset="utf-8")
+    meta(name="description" content="Complain, Request or post an Ad. Share your experiences or problem faced in India")
+    meta(name="keywords" content="Complain, Request, Advertisement, India")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+    script(src='http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js')
+  body
+    block content
+    div.map-container
+     div#map
+    div.footer.row
+     div.col-sm-12
+     div.row.social_media
+      div.col-sm-8.col-sm-offset-4
+       div.a2a_kit.a2a_kit_size_32.a2a_default_style
+        a.a2a_button_facebook
+        a.a2a_button_twitter
+        a.a2a_button_google_plus
+        a.a2a_button_stumbleupon
+        a.a2a_button_blogger_post
+        a.a2a_button_google_bookmarks
+        a.a2a_button_digg
+        a.a2a_button_delicious
+        a.a2a_button_pinterest
+    script(src='/javascript/compApp.js')
+    script(src='/javascript/social.js')    
+    script(src='https://maps.googleapis.com/maps/api/js?key='+GMapKey+'&libraries=places&callback=initMap', async, defer)
+    script(src='/javascript/map.js')
+    script(src='//static.addtoany.com/menu/page.js')

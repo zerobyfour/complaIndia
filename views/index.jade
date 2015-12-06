@@ -1,0 +1,55 @@
+extends layout
+
+block content
+  div.row.header-part
+   div.col-sm-4
+    div.fb-page(data-href="https://www.facebook.com/complaindia", data-width="400", data-hide-cover="false", data-show-facepile="false", data-show-posts="false")
+   div.col-sm-8
+    h1= title
+   div.col-sm-2.fb-btn-box
+    div.fb-follow(data-href="https://www.facebook.com/complaindia", data-layout="button_count", data-show-faces="true")
+   div.col-sm-6.fb-btn-box 
+    div.fb-like(data-colorscheme="dark", data-share="true", data-show-faces="true", data-layout="button_count")
+  div.container
+   div.row#complain_stuff(ng-controller='compListCtrl')
+    div.col-sm-8.small_intro
+     span.glyphicon.glyphicon-warning-sign.cust_im
+     span.text-success
+      <strong>Do you have complains? Feel free to put it down for others. Wronged by institution(s) or government or any (bad) experience worth mentioning. Sharing really might be caring.</strong>
+    div.col-sm-1
+    div.right.btn.btn-primary.col-sm-1(ng-click="addComplain()", ng-hide="addFlag")
+     span.glyphicon.glyphicon-plus
+    div.right.btn.btn-primary.col-sm-1(ng-click="hideComplain()", ng-show="addFlag")
+     span.glyphicon.glyphicon-minus
+    div.row 
+     include addComplain
+    div.row 
+     include complainList
+   div.row#request_stuff(ng-controller='reqListCtrl')
+    div.col-sm-8.small_intro
+     span.glyphicon.glyphicon-bullhorn.cust_im
+     span.text-success
+      <strong>Make a request.</strong>
+    div.col-sm-1
+    div.right.btn.btn-primary.col-sm-1(ng-click="addRequest()", ng-hide="addFlag")
+     span.glyphicon.glyphicon-plus
+    div.right.btn.btn-primary.col-sm-1(ng-click="hideRequest()", ng-show="addFlag")
+     span.glyphicon.glyphicon-minus
+    div.row 
+     include addRequest
+    div.row
+     include requestList
+   div.row#advert_stuff(ng-controller='advListCtrl')
+    div.col-sm-8.small_intro
+     span.glyphicon.glyphicon-send.cust_im
+     span.text-success
+      <strong>Some Ads.</strong>
+    div.col-sm-1
+    div.right.btn.btn-primary.col-sm-1(ng-click="addAdvert()", ng-hide="addFlag")
+     span.glyphicon.glyphicon-plus
+    div.right.btn.btn-primary.col-sm-1(ng-click="hideAdvert()", ng-show="addFlag")
+     span.glyphicon.glyphicon-minus
+    div.row 
+     include addAdvert
+    div.row
+     include advertList     

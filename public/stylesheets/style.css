@@ -1,0 +1,68 @@
+html {
+  height:100%;
+}
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.header-part{
+	margin-bottom:15px;
+}
+
+.small_intro{
+	font-size:11.5pt;
+	padding:5px;
+}
+
+.comp-container{
+	overflow:auto;
+}
+
+.cust_im{
+	margin-right:4px;
+}
+
+.btn-box{
+	margin-top:7px;
+}
+
+.comment_icon{
+	cursor:pointer
+}
+
+#map{
+	height:100%;
+}
+
+.map-link{
+	cursor:pointer;
+}
+
+.place_url{
+	cursor:pointer;
+	font-size:9.5pt;
+}
+
+/* .place_url:hover{
+	cursor:pointer;
+	background:cyan;
+} */
+
+.entity_details{
+	margin-top:5pt;
+}
+
+.fb-btn-box{
+	margin-bottom:5pt;
+}
+
+.footer{
+	margin-top:30px;
+	padding-top:20px;
+	padding-bottom:20px;
+}
